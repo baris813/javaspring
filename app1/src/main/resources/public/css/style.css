@@ -1,0 +1,31 @@
+html{
+	background-color: #e9eee3;
+	font-family: 'Trebuchet MS', sans-serif;
+	font-size: 20px;
+	margin-left: 20px;
+	margin-right: 20px;	
+}
+
+h1, h2, h3, h4, h5, h6{
+	color: #4c9599;
+}
+
+input {
+	font-family: 'Trebuchet MS', sans-serif;
+	font-size: 16px;
+}
+
+table, td{
+	border-collapse: collapse;
+	border: 0px;
+	font-size: 18px;
+	padding: 5px;
+}
+
+.bordered td{
+	border: 1px solid #000000;	
+}
+
+.red{
+	color: #ff0000;
+}
