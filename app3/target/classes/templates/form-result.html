@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<link rel="stylesheet" href="/css/style.css">
+	<meta charset="UTF-8">
+	<title>Result</title>
+</head>
+
+<body>
+	<h2>Result</h2>
+	<table class="bordered">
+		<tr>
+			<td>Numeric Field:</td>
+			<td th:text="${formValues.numericField}"></td>
+		</tr>
+		<tr>
+			<td>Text Field:</td>
+			<td th:text="${formValues.textField}"></td>
+		</tr>
+		<tr>
+			<td>Date Field:</td>
+			<td th:text="${formValues.dateField}"></td>
+		</tr>
+		<tr>
+			<td>Checkbox:</td>
+			<td th:text="${formValues.checkboxSelection}"></td>
+		</tr>
+		<tr>
+			<td>Radio Button:</td>
+			<td th:text="${formValues.radioButtonValue}"></td>
+		</tr>
+	</table>
+	
+	<p><a href="form.html">Go back.</a></p>
+	
+</body>
+
+</html>

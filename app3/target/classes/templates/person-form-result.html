@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<link rel="stylesheet" href="/css/style.css">
+	<meta charset="UTF-8">
+	<title>Person Data</title>
+</head>
+
+<body>
+	<h2>Person Data</h2>
+	<table th:object="${person}">
+		<tr>
+			<td>Full Name:</td>
+			<td th:text="*{fullName}"></td>
+		</tr>
+		<tr>
+			<td>Date of Birth:</td>
+			<td><span th:text="*{dateOfBirth}"></span> (Age: <span th:text="*{age}"></span>)</td>
+		</tr>
+		<tr>
+			<td>Gender:</td>
+			<td th:text="*{gender}"></td>
+		</tr>
+		<tr>
+			<td>Height:</td>
+			<td><span th:text="*{height}"></span> cm</td>
+		</tr>
+		<tr>
+			<td>Weight:</td>
+			<td th:text="*{weight} + ' kg'"></td>
+		</tr>
+		<tr>
+			<td>Body Mass Index:</td>
+			<td th:text="*{bodyMassIndexString}"></td>
+		</tr>
+	</table>
+	
+	<p><a href="person-data.html">Go back.</a></p>
+	
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<link rel="stylesheet" href="/css/style.css">
+	<meta charset="UTF-8">
+	<title>Form</title>
+</head>
+
+<body>
+	<h2>Form Processing</h2>
+	<p>Please fill the following form:</p>
+	<form action="/send-form" method="post" th:object="${formValues}">
+		<table class="bordered">
+			<tr>
+				<td>Numeric Field:</td>
+				<td><input type="text" th:field="*{numericField}"></td>
+			</tr>
+			<tr>
+				<td>Text Field:</td>
+				<td><input type="text" th:field="*{textField}"></td>
+			</tr>
+			<tr>
+				<td>Date Field:</td>
+				<td><input type="text" th:field="*{dateField}"></td>
+			</tr>
+			<tr>
+				<td>Checkbox:</td>
+				<td>
+					<input type="checkbox" th:field="*{checkboxSelection}" value="Item 1">Item 1<br>
+					<input type="checkbox" th:field="*{checkboxSelection}" value="Item 2">Item 2<br>
+					<input type="checkbox" th:field="*{checkboxSelection}" value="Item 3">Item 3
+				</td>
+			</tr>
+			<tr>
+				<td>Radio Button:</td>
+				<td>
+					<input type="radio" th:field="*{radioButtonValue}" value="Item 1">Item 1<br>
+					<input type="radio" th:field="*{radioButtonValue}" value="Item 2">Item 2<br>
+					<input type="radio" th:field="*{radioButtonValue}" value="Item 3">Item 3
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><input type="submit" value="Send"></td>
+			</tr>
+		</table>
+	</form>
+</body>
+
+</html>

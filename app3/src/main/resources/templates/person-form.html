@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<link rel="stylesheet" href="/css/style.css">
+	<meta charset="UTF-8">
+	<title>Person Data</title>
+</head>
+
+<body>
+	<h2>Person Data</h2>
+	<p>Please fill the following form:</p>
+	<form action="/send-person-data" method="post" th:object="${person}">
+		<table>
+			<tr>
+				<td>Full Name:</td>
+				<td><input type="text" th:field="*{fullName}"></td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td>Date of Birth:</td>
+				<td><input type="text" th:field="*{dateOfBirth}"></td>
+				<td>format: dd-mm-yyyy</td>
+			</tr>
+			<tr>
+				<td>Gender:</td>
+				<td>
+					<select th:field="*{gender}">
+						<option value="Female">Female</option>
+						<option value="Male">Male</option>
+					</select>
+				</td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td>Height:</td>
+				<td><input type="text" th:field="*{height}"></td>
+				<td>in centimeters</td>
+			</tr>
+			<tr>
+				<td>Weight:</td>
+				<td><input type="text" th:field="*{weight}"></td>
+				<td>in kilograms</td>
+			</tr>
+			<tr>
+				<td colspan="3"><input type="submit" value="Send"></td>
+			</tr>
+		</table>
+	</form>
+</body>
+
+</html>
