@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<link rel="stylesheet" href="/css/style.css">
+	<meta charset="UTF-8">
+	<title>Greeting</title>
+</head>
+
+<body>
+	<h2>Hello <span th:text="${user}"></span>!</h2>
+	<p>Today is <span th:text="${date}"></span></p>
+	<p>This page is invoked from: <span th:text="${source}"></span></p>
+</body>
+
+</html>
