@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<link rel="stylesheet" href="/css/style.css">
+	<meta charset="UTF-8">
+	<title>Form</title>
+</head>
+
+<body>
+	<h2>Form Processing</h2>
+	<p>Please fill the following form:</p>
+	<form action="/send-form-data" method="post" th:object="${formData}">
+		<table>
+			<tr>
+				<td>Numeric Field 1:</td>
+				<td><input type="text" th:field="*{numericField1}"></td>
+				<td th:errors="*{numericField1}" class="error"></td>
+			</tr>
+			<tr>
+				<td>Numeric Field 2:</td>
+				<td><input type="text" th:field="*{numericField2}"></td>
+				<td th:errors="*{numericField2}" class="error"></td>
+			</tr>
+			<tr>
+				<td>Text Field 1:</td>
+				<td><input type="text" th:field="*{textField1}"></td>
+				<td th:errors="*{textField1}" class="error"></td>
+			</tr>
+			<tr>
+				<td>Text Field 2:</td>
+				<td><input type="text" th:field="*{textField2}"></td>
+				<td th:errors="*{textField2}" class="error"></td>
+			</tr>
+			<tr>
+				<td>Text Field 3:</td>
+				<td><input type="text" th:field="*{textField3}"></td>
+				<td th:errors="*{textField3}" class="error"></td>
+			</tr>
+			<tr>
+				<td>Drop-down Menu:</td>
+				<td>
+					<select th:field="*{dropDownMenu}">
+						<option value="">-- Please Select --</option>
+						<option value="Item 1">Item 1</option>
+						<option value="Item 2">Item 2</option>
+						<option value="Item 3">Item 3</option>
+					</select>
+				</td>
+				<td th:errors="*{dropDownMenu}" class="error"></td>
+			</tr>
+			<tr>
+				<td>Date Field:</td>
+				<td><input type="text" th:field="*{dateField}"></td>
+				<td th:errors="*{dateField}" class="error"></td>
+			</tr>
+			<tr>
+				<td style="vertical-align: top;">Checkbox:</td>
+				<td>
+					<input type="checkbox" th:field="*{checkboxSelection}" value="Item 1">Item 1<br>
+					<input type="checkbox" th:field="*{checkboxSelection}" value="Item 2">Item 2<br>
+					<input type="checkbox" th:field="*{checkboxSelection}" value="Item 3">Item 3
+				</td>
+				<td th:errors="*{checkboxSelection}" class="error"></td>
+			</tr>
+			<tr>
+				<td style="vertical-align: top;">Radio Button:</td>
+				<td>
+					<input type="radio" th:field="*{radioButtonValue}" value="Item 1">Item 1<br>
+					<input type="radio" th:field="*{radioButtonValue}" value="Item 2">Item 2<br>
+					<input type="radio" th:field="*{radioButtonValue}" value="Item 3">Item 3
+				</td>
+				<td th:errors="*{radioButtonValue}" class="error"></td>
+			</tr>
+			<tr>
+				<td colspan="3"><input type="submit" value="Send"></td>
+			</tr>
+		</table>
+	</form>
+</body>
+
+</html>
