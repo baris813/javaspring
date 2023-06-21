@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<link rel="stylesheet" href="/css/style.css">
+	<meta charset="UTF-8">
+	<title>New Person</title>
+</head>
+
+<body>
+	<h2>Enter New Person</h2>
+	<p>Please fill the following form:</p>
+	<form action="/send-form-data" method="post" th:object="${person}">
+		<table>
+			<tr>
+				<td>First Name:</td>
+				<td><input type="text" th:field="*{firstName}"></td>
+				<td th:errors="*{firstName}" class="error"></td>
+			</tr>
+			<tr>
+				<td>Last Name:</td>
+				<td><input type="text" th:field="*{lastName}"></td>
+				<td th:errors="*{lastName}" class="error"></td>
+			</tr>
+			<tr>
+				<td>Date of Birth:</td>
+				<td><input type="text" th:field="*{dateOfBirth}"></td>
+				<td th:errors="*{dateOfBirth}" class="error"></td>
+			</tr>
+			<tr>
+				<td colspan="3"><input type="submit" value="Save"></td>
+			</tr>
+		</table>
+	</form>
+	<p>You can view the list of existing persons <a href="/list.html">here</a>.</p>
+</body>
+
+</html>
