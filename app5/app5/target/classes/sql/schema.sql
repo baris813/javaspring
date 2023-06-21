@@ -1,1 +1,0 @@
-create table person(id identity primary key, fname varchar(50), lname varchar(50), dob date);
